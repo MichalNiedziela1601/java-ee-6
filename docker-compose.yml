@@ -1,0 +1,10 @@
+version: '3'
+services:
+  tomcat:
+    image: 'tomcat:8.0'
+    ports:
+      - '8080:8080'
+    volumes:
+      - ~/IdeaProjects/iamat/firstapp/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+      - ~/IdeaProjects/iamat/firstapp/tomcat/conf/server.xml:/usr/local/tomcat/conf/server.xml
+      - ~/IdeaProjects/iamat/firstapp/build/libs/firstapp-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/firstapp-1.0-SNAPSHOT.war
