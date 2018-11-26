@@ -2,7 +2,8 @@
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-         version="3.1">
+         version="3.1"
+id="javaee">
 
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
@@ -36,5 +37,15 @@
     <servlet-mapping>
         <servlet-name>SessionServlet</servlet-name>
         <url-pattern>/SessionServlet.do</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>HashServlet</servlet-name>
+        <servlet-class>com.javaee.servlet.HashServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>HashServlet</servlet-name>
+        <url-pattern>/hash.do</url-pattern>
     </servlet-mapping>
 </web-app>

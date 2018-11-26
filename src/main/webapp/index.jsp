@@ -11,6 +11,8 @@
     <title>$Title$</title>
   </head>
   <body>
+
+  <a href="hashForm.html">Hash text</a>
   $END$
   <form action="Hello.do" method="post">
     <label>Name</label>
