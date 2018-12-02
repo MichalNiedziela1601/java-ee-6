@@ -5,6 +5,18 @@
          version="3.1"
 id="javaee">
 
+
+    <servlet>
+        <servlet-name>Faces Servler</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>Faces Servler</servlet-name>
+        <url-pattern>/faces/*</url-pattern>
+    </servlet-mapping>
+
     <servlet>
         <servlet-name>HelloServlet</servlet-name>
         <servlet-class>com.javaee.HelloServlet</servlet-class>
@@ -33,10 +45,19 @@ id="javaee">
             <param-value>Michal Niedziela vel Sunday</param-value>
         </init-param>
     </servlet>
+    <servlet>
+        <servlet-name>Faces Servlet</servlet-name>
+        <servlet-class>javax.faces.webapp.FacesServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 
     <servlet-mapping>
         <servlet-name>SessionServlet</servlet-name>
         <url-pattern>/SessionServlet.do</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Faces Servlet</servlet-name>
+        <url-pattern>*.xhtml</url-pattern>
     </servlet-mapping>
 
     <servlet>
