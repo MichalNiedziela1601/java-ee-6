@@ -8,7 +8,21 @@
     <managed-bean-name>manadzer</managed-bean-name>
     <managed-bean-class>com.javaee.domain.Manager</managed-bean-class>
     <managed-bean-scope>request</managed-bean-scope>
+    <managed-property>
+        <property-name>symbolActiveCompany</property-name>
+        <value>#{param.symbol}</value>
+    </managed-property>
 
 </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>sectorInfo</managed-bean-name>
+        <managed-bean-class>com.javaee.domain.SectorInfo</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+        <managed-property>
+            <property-name>manager</property-name>
+            <value>#{manadzer}</value>
+        </managed-property>
+    </managed-bean>
   
 </faces-config>

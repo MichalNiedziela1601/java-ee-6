@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: sunday
+  Date: 02/12/18
+  Time: 19:46
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition template="./uklad.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <ui:define name="top">
+        Average price of companies in sectors
+    </ui:define>
+
+    <ui:define name="tresc">
+        <ul>
+            <ui:repeat value="#{sectorInfo.sectors}" var="sector">
+                <li>#{sector}: #{sectorInfo.prices[sector]}</li>
+            </ui:repeat>
+        </ul>
+    </ui:define>
+
+</ui:composition>
+

@@ -11,6 +11,7 @@
 </h:head>
 <h:body>
     <h1>Notowania giełdowe</h1>
+    <h:outputLink value="sectors.xhtml">Sectors</h:outputLink>
     <table>
         <tr>
             <th>Nazwa</th><th>Symbol</th><th>Price</th><th>Change (%)</th>
@@ -18,7 +19,12 @@
         <ui:repeat value="#{manadzer.spolkas}" var="spolka">
             <tr>
                 <td>#{spolka.name}</td>
-                <td>#{spolka.symbol}</td>
+                <td>
+                    <h:outputLink value="history.xhtml">
+                        <f:param name="symbol" value="#{spolka.symbol}" />
+                        <h:outputText value="#{spolka.symbol}" />
+                    </h:outputLink>
+                </td>
                 <td>#{spolka.lastQuotation.price}</td>
                 <td>#{spolka.lastQuotation.change}</td>
             </tr>

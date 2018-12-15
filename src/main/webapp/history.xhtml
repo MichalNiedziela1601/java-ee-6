@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: sunday
+  Date: 02/12/18
+  Time: 17:52
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition template="./uklad.xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:h="http://java.sun.com/jsf/html">
+
+    <ui:define name="top">
+        Historical corporation quotation #{manadzer.activeCompany.name}
+    </ui:define>
+    <ui:define name="tresc">
+        <table>
+            <tr>
+                <th>Day</th>
+                <th>Value</th>
+                <th>Change</th>
+            </tr>
+            <ui:repeat value="#{manadzer.activeCompany.quotations}" var="quotation">
+                <tr>
+                    <td>
+                        <h:outputText value="#{quotation.date}">
+                            <f:convertDateTime dateStyle="short" type="date" />
+                        </h:outputText>
+                    </td>
+                    <td>#{quotation.price}</td>
+                    <td>#{quotation.change}</td>
+                </tr>
+            </ui:repeat>
+        </table>
+    </ui:define>
+
+</ui:composition>
