@@ -2,3 +2,7 @@
     margin-top: 15px;
     text-align: center;
 }
+
+.navbar a {
+    padding-right: 10px;
+}

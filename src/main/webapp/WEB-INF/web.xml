@@ -5,6 +5,10 @@
          version="3.1"
 id="javaee">
 
+    <welcome-file-list>
+        <welcome-file>index.xhtml</welcome-file>
+    </welcome-file-list>
+
 
     <servlet>
         <servlet-name>Faces Servlet</servlet-name>

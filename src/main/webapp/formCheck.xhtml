@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Dazy aplikacji JSF</title>
+    <link href="default.css" rel="stylesheet" type="text/css"/>
+</h:head>
+<h:body>
+    <h:form id="formularz">
+        <h:outputLabel for="formularz:liczba1">Liczba 1:</h:outputLabel>
+        <h:inputText id="liczba1" value="#{kalkulator.liczba1}" />
+
+        <br />
+
+        <h:outputLabel for="formularz:liczba2">Liczba 2</h:outputLabel>
+        <h:inputText id="liczba2" value="#{kalkulator.liczba2}" />
+
+        <br />
+
+        <h:outputLabel for="formularz:listNumbers">Liczby</h:outputLabel>
+        <h:inputText id="listNumbers" value="#{kalkulator.listNumbers}">
+                <f:converter converterId="ConvertListNumbers"></f:converter>
+                <f:validator validatorId="validateNumberList" id="validator"/>
+        </h:inputText>
+
+        <br />
+
+        <h:commandButton value="Calculate" action="#{kalkulator.calculate}" />
+        <h:commandButton value="Calculate sum" action="#{kalkulator.calculateMulti}" />
+
+        <br />
+        <h:outputText value="Result is: #{kalkulator.sum}" />
+
+
+    </h:form>
+</h:body>
+</html>

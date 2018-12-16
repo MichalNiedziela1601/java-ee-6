@@ -24,5 +24,28 @@
             <value>#{manadzer}</value>
         </managed-property>
     </managed-bean>
+
+    <managed-bean>
+        <managed-bean-name>kalkulator</managed-bean-name>
+        <managed-bean-class>com.javaee.domain.Kalkulator</managed-bean-class>
+        <managed-bean-scope>request</managed-bean-scope>
+
+    </managed-bean>
+
+    <converter>
+
+        <converter-for-class>com.javaee.util.ListNumbers</converter-for-class>
+        <converter-class>com.javaee.util.NumberConverter</converter-class>
+    </converter>
+
+    <converter>
+        <converter-id>ConvertListNumbers</converter-id>
+        <converter-class>com.javaee.util.NumberConverter</converter-class>
+    </converter>
+
+    <validator>
+        <validator-id>validateNumberList</validator-id>
+        <validator-class>com.javaee.util.validation.ValidateNumberList</validator-class>
+    </validator>
   
 </faces-config>
