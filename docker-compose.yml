@@ -2,9 +2,24 @@ version: '3'
 services:
   tomcat:
     image: 'tomcat:8.0'
+    container_name: 'tomcat-8'
     ports:
       - '8080:8080'
     volumes:
       - ~/IdeaProjects/iamat/firstapp/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
       - ~/IdeaProjects/iamat/firstapp/tomcat/conf/server.xml:/usr/local/tomcat/conf/server.xml
-      - ~/IdeaProjects/iamat/firstapp/build/libs/firstapp-1.0-SNAPSHOT.war:/usr/local/tomcat/webapps/firstapp-1.0-SNAPSHOT.war
+      - ~/IdeaProjects/iamat/firstapp/build/libs/firstapp.war:/usr/local/tomcat/webapps/firstapp.war
+
+  mysql:
+    image: mysql:5.5
+    container_name: mysql55
+    ports:
+    - "3306:3306"
+    volumes:
+      - ./db_data:/var/lib/myslq
+      - ./db_data/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+    environment:
+      MYSQL_ROOT_PASSWORD: password_root
+      MYSQL_DATABASE: javaee
+      MYSQL_USER: sunday
+      MYSQL_PASSWORD: okocim
