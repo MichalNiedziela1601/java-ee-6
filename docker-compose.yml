@@ -6,10 +6,10 @@ services:
     ports:
       - '8080:8080'
     volumes:
-      - ~/IdeaProjects/iamat/firstapp/tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
-      - ~/IdeaProjects/iamat/firstapp/tomcat/conf/server.xml:/usr/local/tomcat/conf/server.xml
-      - ~/IdeaProjects/iamat/firstapp/build/libs/firstapp.war:/usr/local/tomcat/webapps/firstapp.war
-
+      - ./tomcat/conf/tomcat-users.xml:/usr/local/tomcat/conf/tomcat-users.xml
+      - ./tomcat/conf/server.xml:/usr/local/tomcat/conf/server.xml
+      - ./tomcat/conf/logging.properties:/usr/local/tomcat/conf/logging.properties
+      - ./build/libs/firstapp.war:/usr/local/tomcat/webapps/firstapp.war
   mysql:
     image: mysql:5.5
     container_name: mysql55

@@ -69,4 +69,8 @@ id="javaee">
         <servlet-name>HashServlet</servlet-name>
         <url-pattern>/hash.do</url-pattern>
     </servlet-mapping>
+
+    <listener>
+        <listener-class>com.javaee.listeners.ClinicContextListener</listener-class>
+    </listener>
 </web-app>

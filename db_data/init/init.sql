@@ -1,6 +1,6 @@
-
 USE javaee;
-CREATE TABLE clinic (
+
+CREATE TABLE IF NOT EXISTS clinic (
   id INT PRIMARY KEY AUTO_INCREMENT NOT NULL,
   name VARCHAR(255),
   description TEXT,

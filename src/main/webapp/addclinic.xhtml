@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Created by IntelliJ IDEA.
+  User: sunday
+  Date: 05/01/19
+  Time: 12:19
+-->
+<!DOCTYPE html
+        PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<ui:composition xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                template="szablon.xhtml"
+                xmlns="http://www.w3.org/1999/xhtml">
+    <ui:define name="content">
+        <h1>Add clinic</h1>
+        <h:form>
+            <h:outputText id="comunicate" />
+            <table>
+                <tr>
+                    <td>Name</td>
+                    <td><h:inputText id="name" value="#{clinicBean.clinic.name}" required="true" /></td>
+                </tr>
+                <tr>
+                    <td>Address</td>
+                    <td><h:inputText id="address" value="#{clinicBean.clinic.address}" required="true" /></td>
+                </tr>
+                <tr>
+                    <td>Contact</td>
+                    <td><h:inputText id="contact" value="#{clinicBean.clinic.contact}" required="true" /></td>
+                </tr>
+                <tr>
+                    <td>Description</td>
+                    <td><h:inputText id="description" value="#{clinicBean.clinic.description}" required="true"/> </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><h:commandButton action="#{clinicBean.add}" value="Add" /> </td>
+                </tr>
+            </table>
+        </h:form>
+    </ui:define>
+</ui:composition>

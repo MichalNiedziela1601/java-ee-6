@@ -32,8 +32,13 @@
 
     </managed-bean>
 
-    <converter>
+    <managed-bean>
+        <managed-bean-name>clinicBean</managed-bean-name>
+        <managed-bean-class>com.javaee.controllers.ClinicBean</managed-bean-class>
+        <managed-bean-scope>session</managed-bean-scope>
+    </managed-bean>
 
+    <converter>
         <converter-for-class>com.javaee.util.ListNumbers</converter-for-class>
         <converter-class>com.javaee.util.NumberConverter</converter-class>
     </converter>
