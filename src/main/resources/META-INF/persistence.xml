@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<persistence version="2.0"
-             xmlns="http://java.sun.com/xml/ns/persistence">
+<persistence xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence
+             http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd"
+             version="2.1">
     <!-- Define persistence unit -->
     <persistence-unit name="clinic" transaction-type="RESOURCE_LOCAL">
-        <provider>org.hibernate.ejb.HibernatePersistence</provider>
+        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="hibernate.connection.username" value="root" />
-            <property name="hibernate.connection.password" value="password_root"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/javaee" />
-            <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-            <property name="hibernate.cache.provider_class"
-                      value="org.hibernate.cache.NoCacheRegionFactoryAvailableException" />
+            <property name="hibernate.connection.username" value="sunday" />
+            <property name="hibernate.connection.password" value="okocim"/>
+            <property name="hibernate.connection.url" value="jdbc:postgresql://postgres:5432/javaee" />
+            <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect" />
         </properties>
     </persistence-unit>
 </persistence>

@@ -1,7 +1,7 @@
 version: '3'
 services:
   tomcat:
-    image: 'tomcat:8.0'
+    image: 'tomcat:8.5.37-jre8-alpine'
     container_name: 'tomcat-8'
     ports:
       - '8080:8080'
@@ -10,16 +10,19 @@ services:
       - ./tomcat/conf/server.xml:/usr/local/tomcat/conf/server.xml
       - ./tomcat/conf/logging.properties:/usr/local/tomcat/conf/logging.properties
       - ./build/libs/firstapp.war:/usr/local/tomcat/webapps/firstapp.war
-  mysql:
-    image: mysql:5.5
-    container_name: mysql55
+      - ./tomcat/logs:/usr/local/tomcat/logs
+      - ./tomcat/conf/manager.xml:/usr/local/tomcat/conf/Catalina/localhost/manager.xml
+    depends_on:
+      - postgres
+  postgres:
+    image: postgres:9.6
+    restart: always
     ports:
-    - "3306:3306"
-    volumes:
-      - ./db_data:/var/lib/myslq
-      - ./db_data/init/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - '5432:5432'
     environment:
-      MYSQL_ROOT_PASSWORD: password_root
-      MYSQL_DATABASE: javaee
-      MYSQL_USER: sunday
-      MYSQL_PASSWORD: okocim
+      - POSTGRES_PASSWORD=okocim
+      - POSTGRES_USER=sunday
+      - POSTGRES_DB=javaee
+    volumes:
+      - ./db_data_pg/db:/var/lib/postgresql/data
+      - ./db_data_pg/init/init.sql:/docker-entrypoint-initdb.d/init.sql
