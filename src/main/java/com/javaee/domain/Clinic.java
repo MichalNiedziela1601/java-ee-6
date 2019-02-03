@@ -7,11 +7,11 @@ import java.util.Objects;
 @Entity
 @Table(name = "clinic")
 @NamedQueries({
-        @NamedQuery(name = "Clinic.findAll", query = "SELECT c from clinic c"),
-        @NamedQuery(name = "Clinic.findById", query="SELECT c FROM clinic c WHERE c.id = :id"),
-        @NamedQuery(name="Clinic.findByName", query = "SELECT c FROM clinic c WHERE c.name = :name"),
-        @NamedQuery(name="Clinic.findByAddress", query = "SELECT c FROM clinic c WHERE c.address = :address"),
-        @NamedQuery(name="Clinic.findByContact", query = "SELECT c FROM clinic c WHERE c.contact = :contact"),
+        @NamedQuery(name = "Clinic.findAll", query = "SELECT c from Clinic c"),
+        @NamedQuery(name = "Clinic.findById", query="SELECT c FROM Clinic c WHERE c.id = :id"),
+        @NamedQuery(name="Clinic.findByName", query = "SELECT c FROM Clinic c WHERE c.name = :name"),
+        @NamedQuery(name="Clinic.findByAddress", query = "SELECT c FROM Clinic c WHERE c.address = :address"),
+        @NamedQuery(name="Clinic.findByContact", query = "SELECT c FROM Clinic c WHERE c.contact = :contact"),
 })
 public class Clinic implements Serializable {
 

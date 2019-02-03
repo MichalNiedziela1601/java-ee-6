@@ -10,10 +10,13 @@
         <properties>
             <property name="hibernate.connection.username" value="sunday" />
             <property name="hibernate.connection.password" value="okocim"/>
-            <property name="hibernate.connection.url" value="jdbc:postgresql://postgres:5432/javaee" />
+            <property name="hibernate.connection.url" value="jdbc:postgresql://postgres:5432/sunday" />
             <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
 
             <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQL94Dialect" />
+            <property name="hibernate.default_schema" value="javaee" />
+            <property name="hibernate.hbm2ddl.auto" value="create" />
+            <property name="hibernate.hbm2ddl.import_files" value="/init.sql" />
         </properties>
     </persistence-unit>
 </persistence>
