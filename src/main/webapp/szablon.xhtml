@@ -23,10 +23,12 @@ xmlns:ui="http://java.sun.com/jsf/facelets">
     <div id="left">
         <ul>
             <li><h:outputLink value="addclinic.xhtml">Add clinic</h:outputLink> </li>
+            <li><h:outputLink value="showClinic.xhtml">Show clinics</h:outputLink> </li>
         </ul>
     </div>
     <div id="content" class="left_conent">
         <ui:insert name="content"></ui:insert>
+        <h:messages infoStyle="color: green" layout="table" />
     </div>
 </h:body>
 
