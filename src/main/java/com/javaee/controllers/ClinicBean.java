@@ -70,6 +70,17 @@ public class ClinicBean {
         return null;
     }
 
+    public String edit() {
+        EntityManager em = DBManager.getManager().createEntityManager();
+        em.getTransaction().begin();
+        em.merge(clinic);
+        em.getTransaction().commit();
+        em.close();
+        this.addInformation("Edit clinic");
+        this.clinic = new Clinic();
+        return "/showClinic.xhtml";
+    }
+
     public void addInformation(String s) {
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, s, ""));
     }

@@ -20,8 +20,8 @@
                 </tr>
                 <tr>
                     <ui:repeat value="#{clinicBean.list}" var="clinic">
-                        <td><h:commandLink value="Edit" action="#{clinicBeean.loadToEdit}"
-                                           actionListener="#{clinicBean.clieicListener}">
+                        <td><h:commandLink value="Edit" action="#{clinicBean.loadToEdit}"
+                                           actionListener="#{clinicBean.clinicListener}">
                             <f:param value="#{clinic.id}" name="clinicID"/>
                         </h:commandLink></td>
                         <td><h:commandLink value="Remove" action="#{clinicBean.remove}"
